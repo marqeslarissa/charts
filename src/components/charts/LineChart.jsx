@@ -13,7 +13,7 @@ const data = [
 
 const options = {
   title: "Gráfico de Linha",
-  width: 650,
+  width: 750,
   height: 300,
   vAxis: {
     format: "currency",
