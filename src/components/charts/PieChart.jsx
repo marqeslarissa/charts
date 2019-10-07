@@ -1,41 +1,37 @@
 import React, { PureComponent } from "react";
 import { Chart } from "react-google-charts";
+import { Grommet, Box } from "grommet";
+import Typography from "@material-ui/core/Typography";
 
 const data = [
   ["Repartição", "Valor"],
-  ["Educação", 2000],
-  ["Transporte", 500],
-  ["Lazer", 230],
-  ["Saúde", 50],
-  ["Cartão de crédito", 900],
-  ["Alimentação", 260]
+  ["Education", 2000],
+  ["Transport", 500],
+  ["Recreation", 230],
+  ["Healthy", 50],
+  ["Credit card", 900],
+  ["Food", 260]
 ];
 const options = {
-  title: "Gráfico de Pizza",
-  is3D: true,
-  slices: {
-    0: { color: "#8884d8" },
-    1: { color: "#82ca9d" },
-    2: { color: "#8884d8" },
-    3: { color: "#82ca9d" },
-    4: { color: "#8884d8" },
-    5: { color: "#82ca9d" },
-    6: { color: "#8884d8" }
-  }
+  colors: ["#8884d8", "#82ca9d"],
+  is3D: true
 };
 
 export default class PieChart extends PureComponent {
   render() {
     return (
-      <div>
-        <Chart
-          chartType="PieChart"
-          width="100%"
-          height="600px"
-          data={data}
-          options={options}
-        />
-      </div>
+      <Grommet>
+        <Box pad="small" elevation="medium">
+          <Typography variant="h6">Pie Chart</Typography>
+          <Chart
+            chartType="PieChart"
+            width="auto"
+            height="600px"
+            data={data}
+            options={options}
+          />
+        </Box>
+      </Grommet>
     );
   }
 }

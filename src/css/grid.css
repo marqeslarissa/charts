@@ -1,7 +1,29 @@
+.app {
+  background: #f1f1f1;
+  display: grid;
+  font-family: Arial, Helvetica, sans-serif;
+  grid-template-areas:
+    "cabecalho"
+    "conteudo"
+    "rodape";
+  grid-template-columns: auto;
+  grid-template-rows: 50px auto auto;
+}
+.conteudo {
+  grid-area: conteudo;
+  padding: 0 2rem;
+}
 .box {
   align-items: flex-end;
   display: flex;
   justify-content: center;
+}
+.highlights {
+  display: grid;
+  grid-gap: 0.2rem;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 33.33% 33.33% 33.33%;
+  height: calc(100vh - 50px);
 }
 
 .dashboard {
@@ -50,4 +72,16 @@
   flex-wrap: wrap;
   height: 100%;
   justify-content: space-between;
+}
+.highlights__categories___item {
+  align-items: center;
+  background: #fdfdfd;
+  border-left: 5px solid transparent;
+  color: #333333;
+  display: flex;
+  padding: 1rem;
+  width: 50%;
+}
+.highlights__categories___link {
+  color: inherit;
 }

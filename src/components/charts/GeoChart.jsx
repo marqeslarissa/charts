@@ -1,5 +1,7 @@
 import React, { PureComponent } from "react";
 import { Chart } from "react-google-charts";
+import { Grommet, Box } from "grommet";
+import Typography from "@material-ui/core/Typography";
 
 const data = [
   ["Estado", "PIB (%)"],
@@ -44,15 +46,19 @@ const options = {
 export default class GeoChart extends PureComponent {
   render() {
     return (
-      <div>
-        <Chart
-          chartType="GeoChart"
-          width="100%"
-          height="600px"
-          data={data}
-          options={options}
-        />
-      </div>
+      <Grommet>
+        <Box pad="small" elevation="medium">
+          <Typography variant="h6">Geo Chart</Typography>
+          <Typography variant="subtitle1">States - Brazil</Typography>
+          <Chart
+            chartType="GeoChart"
+            width="auto"
+            height="600px"
+            data={data}
+            options={options}
+          />
+        </Box>
+      </Grommet>
     );
   }
 }

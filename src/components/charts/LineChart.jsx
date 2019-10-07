@@ -1,18 +1,20 @@
 import React, { PureComponent } from "react";
 import { Chart } from "react-google-charts";
+import { Grommet, Box } from "grommet";
+import Typography from "@material-ui/core/Typography";
 
 const data = [
   ["Repartição", "Valor A", "Valor B"],
-  ["Educação", 1000, 20],
-  ["Transporte", 500, 120],
-  ["Lazer", 230, 300],
-  ["Saúde", 50, 100],
-  ["Cartão de crédito", 100, 300],
-  ["Alimentação", 100, 600]
+  ["Education", 1000, 20],
+  ["Transport", 500, 120],
+  ["Recreation", 230, 300],
+  ["Healthy", 50, 100],
+  ["Credit card", 100, 300],
+  ["Food", 100, 600]
 ];
 
 const options = {
-  title: "Gráfico de Linha",
+  colors: ["#8884d8", "#82ca9d"],
   width: 750,
   height: 300,
   vAxis: {
@@ -25,15 +27,18 @@ const options = {
 export default class LineChart extends PureComponent {
   render() {
     return (
-      <div>
-        <Chart
-          chartType="LineChart"
-          width="100%"
-          height="400px"
-          data={data}
-          options={options}
-        />
-      </div>
+      <Grommet>
+        <Box pad="small" elevation="medium">
+          <Typography variant="h6">Line Chart</Typography>
+          <Chart
+            chartType="LineChart"
+            width="auto"
+            height="400px"
+            data={data}
+            options={options}
+          />
+        </Box>
+      </Grommet>
     );
   }
 }

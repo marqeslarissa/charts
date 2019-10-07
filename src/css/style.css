@@ -29,3 +29,44 @@
   grid-area: cabecalho;
   padding: 0 2rem;
 }
+.segment {
+  opacity: 0;
+  border: none;
+  bottom: 0;
+  height: calc(100vh - #{$topbar-height});
+  overflow-x: hidden;
+  overflow-y: auto;
+  right: 0;
+  padding: 5px;
+  position: fixed;
+  animation: 0.35s alternate 0.7s forwards delayedShow;
+  background: white;
+  //background: $neuter;
+
+  .segment__container {
+    position: relative;
+    background-color: transparent;
+    height: 100%;
+    transition: 300ms all;
+    .segment__header {
+      padding-left: 10px;
+      display: flex;
+      align-items: center;
+      //height: $seg_header_size;
+      h1 {
+        color: $neuter-light;
+      }
+    }
+    hr {
+      margin: 0;
+      border-top: 1px solid $platinum;
+    }
+    .segment__body {
+      padding-left: 10px;
+      min-height: 100%;
+      max-height: 100%;
+      //max-height: calc(100% - #{$seg_header_size});
+      //min-height: calc(100% - #{$seg_header_size});
+    }
+  }
+}

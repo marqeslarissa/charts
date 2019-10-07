@@ -1,8 +1,10 @@
 import React, { PureComponent } from "react";
 import { Chart } from "react-google-charts";
+import { Grommet, Box } from "grommet";
+import Typography from "@material-ui/core/Typography";
 
 const data = [
-  ["Mês", "Entrada", "Saída"],
+  ["Mês", "Cash Input", "Cash Out"],
   ["jan", 2500, 1000],
   ["fev", 1000, 500],
   ["mar", 3000, 1300],
@@ -17,7 +19,7 @@ const data = [
   ["dez", 3000, 1740]
 ];
 const options = {
-  title: "Gráfico de Colunas",
+  colors: ["#8884d8", "#82ca9d"],
   vAxis: {
     format: "currency",
     gridlines: { color: "transparent" }
@@ -26,15 +28,18 @@ const options = {
 export default class ColumnChart extends PureComponent {
   render() {
     return (
-      <div>
-        <Chart
-          chartType="ColumnChart"
-          width="100%"
-          height="400px"
-          data={data}
-          options={options}
-        />
-      </div>
+      <Grommet>
+        <Box pad="small" elevation="medium">
+          <Typography variant="h6">Column Chart</Typography>
+          <Chart
+            chartType="ColumnChart"
+            width="auto"
+            height="400px"
+            data={data}
+            options={options}
+          />
+        </Box>
+      </Grommet>
     );
   }
 }

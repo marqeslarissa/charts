@@ -12,34 +12,28 @@ export default function Dashboard() {
   return (
     <Container>
       <Row>
-        <Col sm={8} className="chart__main">
+        <Col xs={12} sm={12} md={3} lg={3}>
           <GeoChart />
         </Col>
-        <Col sm={4}>
+        <Col xs={12} sm={12} md={3} lg={3}>
           <DonutChart />
         </Col>
+        <Col xs={12} sm={12} md={3} lg={3}>
+          <ColumnChart />
+        </Col>
       </Row>
       <Row>
-        <Col sm={3}>
+        <Col xs={12} sm={12} md={3} lg={3}>
           <PieChart />
         </Col>
-        <Col sm={3}>
+        <Col xs={12} sm={12} md={3} lg={3}>
           <LineChart />
         </Col>
-        <Col sm={3}>
-          <ColumnChart />
-        </Col>
-        <Col sm={3}>
-          <BarChart />
-        </Col>
-      </Row>
-      <Row>
-        <Col sm={8}>
-          <PieChart />
-        </Col>
-        <Col sm={4}>
-          <ColumnChart />
-        </Col>
+        <Row>
+          <Col xs={12} sm={12} md={3} lg={3}>
+            <BarChart />
+          </Col>
+        </Row>
       </Row>
     </Container>
   );
